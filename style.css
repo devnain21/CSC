@@ -1,0 +1,178 @@
+:root {
+    --primary: #d32f2f; /* Red */
+    --blue: #0d6efd;    /* Blue */
+    --bg: #f4f6f8;
+    --white: #ffffff;
+}
+
+body {
+    margin: 0; padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg);
+    padding-bottom: 60px;
+}
+
+.main-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--white);
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+/* 1. HEADER (Sketch Design) */
+.sketch-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: white;
+    border-bottom: 4px solid var(--primary);
+    gap: 15px;
+}
+
+.logo-section .shop-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    object-fit: cover;
+}
+
+.info-section { flex: 1; }
+
+.shop-name {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--blue);
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.owner-tag {
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+    margin: 4px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.tagline {
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+    margin: 0;
+}
+
+/* 2. SMART ACTION BAR */
+.smart-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 10px;
+}
+
+.bar-left { display: flex; gap: 10px; }
+
+.nav-icon {
+    width: 38px; height: 38px;
+    background: #f0f2f5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-icon:hover, .nav-icon.active {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.bar-center { flex: 1; text-align: center; }
+
+#pageTitleText {
+    font-weight: 800;
+    color: var(--primary);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.bar-right a {
+    background: #25D366;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+/* News & Search */
+.news-ticker { background: #fff3cd; color: #856404; padding: 8px; font-size: 12px; font-weight: 600; }
+.search-container { padding: 15px; position: relative; }
+.search-input {
+    width: 100%; padding: 12px 15px 12px 40px;
+    border: 2px solid #eee; border-radius: 50px;
+    font-size: 14px; box-sizing: border-box; outline: none;
+}
+.search-input:focus { border-color: var(--blue); }
+.search-icon { position: absolute; left: 30px; top: 50%; transform: translateY(-50%); color: #aaa; }
+
+/* Menu Grid */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px 15px;
+}
+
+.menu-box {
+    background: white; border: 1px solid #f0f0f0; border-radius: 10px;
+    padding: 15px 5px; text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    text-decoration: none; color: #333;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 8px; transition: 0.2s;
+}
+.menu-box:hover { transform: translateY(-3px); border-color: var(--primary); }
+.menu-box i { font-size: 24px; color: var(--blue); }
+.menu-box span { font-size: 11px; font-weight: 600; line-height: 1.3; }
+
+/* Footer */
+.new-footer {
+    background: #222; color: white; padding: 30px 15px;
+    margin-top: 30px; text-align: center;
+    border-top-left-radius: 20px; border-top-right-radius: 20px;
+}
+.footer-icons { display: flex; justify-content: center; gap: 25px; margin-bottom: 20px; }
+.footer-icons a { color: #ccc; text-decoration: none; font-size: 14px; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.footer-icons a:hover { color: var(--primary); }
+.copyright { font-size: 11px; color: #777; margin: 0; }
+
+/* Floating WA */
+.float-wa {
+    position: fixed; bottom: 20px; right: 20px;
+    background: #25D366; color: white; width: 50px; height: 50px;
+    border-radius: 50%; text-align: center; line-height: 50px;
+    font-size: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000;
+}
+
+@media (max-width: 400px) {
+    .menu-grid { grid-template-columns: repeat(3, 1fr); }
+    .shop-name { font-size: 18px; }
+}
